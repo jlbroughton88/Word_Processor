@@ -1,6 +1,12 @@
+import Navbar from "./comps/navbar";
+
 const Index = () => {
     return (
-        <h1>Hello from index</h1>
+        <div>
+            <Navbar/>
+           <h1>Hello from index</h1> 
+        </div>
+        
     )
 }
 

@@ -1,3 +1,15 @@
 {
-    "version": 2
+    "version": 2,
+    "build": {
+        "env" : {
+            "CLIENT_ID": "@wp_clientid",
+            "DOMAIN":  "@wp_domain",
+            "REDIRECT_URI": "http://localhost:3000/"
+        }
+    },
+    "env": {
+        "CLIENT_ID": "@wp_clientid",
+        "DOMAIN":  "@wp_domain",
+        "REDIRECT_URI": "http://localhost:3000/"
+    }
 }
