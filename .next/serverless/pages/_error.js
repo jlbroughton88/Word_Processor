@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "ey3D");
+/******/ 	return __webpack_require__(__webpack_require__.s = "FgTC");
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -1058,32 +1058,31 @@ if (false) { var throwOnDirectAccess, ReactIs; } else {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Root; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("q1tI");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var next_app__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__("8Bbg");
-/* harmony import */ var next_app__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_app__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _comps_contexts_envContext__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__("JVz0");
 /* harmony import */ var use_auth0_hooks__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__("PUim");
 /* harmony import */ var use_auth0_hooks__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(use_auth0_hooks__WEBPACK_IMPORTED_MODULE_2__);
-
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+ // import App from "next/app";
+
  // import Router from "next/router";
 
 
-class Root extends next_app__WEBPACK_IMPORTED_MODULE_1___default.a {
-  render() {
-    const {
-      Component,
-      pageProps
-    } = this.props;
-    return __jsx(use_auth0_hooks__WEBPACK_IMPORTED_MODULE_2__["Auth0Provider"], {
-      domain: undefined,
-      clientId: undefined,
-      redirectUri: undefined
-    }, __jsx(Component, pageProps));
-  }
 
-}
+const App = props => {
+  const {
+    Component,
+    pageProps
+  } = props;
+  return __jsx(use_auth0_hooks__WEBPACK_IMPORTED_MODULE_2__["Auth0Provider"], {
+    domain: undefined,
+    clientId: undefined,
+    redirectUri: undefined
+  }, __jsx(_comps_contexts_envContext__WEBPACK_IMPORTED_MODULE_1__["default"], null, __jsx(Component, pageProps)));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (App);
 
 /***/ }),
 
@@ -2377,14 +2376,6 @@ module.exports = JSON.parse("{}");
 var semver = __webpack_require__("jWEn");
 
 module.exports = semver.satisfies(process.version, '^6.12.0 || >=8.0.0');
-
-
-/***/ }),
-
-/***/ "8Bbg":
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__("B5Ud")
 
 
 /***/ }),
@@ -6154,128 +6145,6 @@ exports.default = withWrapper;
 
 /***/ }),
 
-/***/ "B5Ud":
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _interopRequireDefault = __webpack_require__("KI45");
-
-exports.__esModule = true;
-exports.Container = Container;
-exports.createUrl = createUrl;
-exports.default = void 0;
-
-var _react = _interopRequireDefault(__webpack_require__("q1tI"));
-
-var _utils = __webpack_require__("g/15");
-
-exports.AppInitialProps = _utils.AppInitialProps;
-/**
-* `App` component is used for initialize of pages. It allows for overwriting and full control of the `page` initialization.
-* This allows for keeping state between navigation, custom error handling, injecting additional data.
-*/
-
-async function appGetInitialProps(_ref) {
-  var {
-    Component,
-    ctx
-  } = _ref;
-  var pageProps = await (0, _utils.loadGetInitialProps)(Component, ctx);
-  return {
-    pageProps
-  };
-}
-
-class App extends _react.default.Component {
-  // Kept here for backwards compatibility.
-  // When someone ended App they could call `super.componentDidCatch`.
-  // @deprecated This method is no longer needed. Errors are caught at the top level
-  componentDidCatch(error, _errorInfo) {
-    throw error;
-  }
-
-  render() {
-    var {
-      router,
-      Component,
-      pageProps
-    } = this.props;
-    var url = createUrl(router);
-    return _react.default.createElement(Component, Object.assign({}, pageProps, {
-      url: url
-    }));
-  }
-
-}
-
-exports.default = App;
-App.origGetInitialProps = appGetInitialProps;
-App.getInitialProps = appGetInitialProps;
-var warnContainer;
-var warnUrl;
-
-if (false) {} // @deprecated noop for now until removal
-
-
-function Container(p) {
-  if (false) {}
-  return p.children;
-}
-
-function createUrl(router) {
-  // This is to make sure we don't references the router object at call time
-  var {
-    pathname,
-    asPath,
-    query
-  } = router;
-  return {
-    get query() {
-      if (false) {}
-      return query;
-    },
-
-    get pathname() {
-      if (false) {}
-      return pathname;
-    },
-
-    get asPath() {
-      if (false) {}
-      return asPath;
-    },
-
-    back: () => {
-      if (false) {}
-      router.back();
-    },
-    push: (url, as) => {
-      if (false) {}
-      return router.push(url, as);
-    },
-    pushTo: (href, as) => {
-      if (false) {}
-      var pushRoute = as ? href : '';
-      var pushUrl = as || href;
-      return router.push(pushRoute, pushUrl);
-    },
-    replace: (url, as) => {
-      if (false) {}
-      return router.replace(url, as);
-    },
-    replaceTo: (href, as) => {
-      if (false) {}
-      var replaceRoute = as ? href : '';
-      var replaceUrl = as || href;
-      return router.replace(replaceRoute, replaceUrl);
-    }
-  };
-}
-
-/***/ }),
-
 /***/ "BMJj":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -7514,6 +7383,194 @@ exports.HeadManagerContext = React.createContext(null);
 
 /***/ }),
 
+/***/ "FgTC":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "unstable_getStaticProps", function() { return unstable_getStaticProps; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "unstable_getStaticParams", function() { return unstable_getStaticParams; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "unstable_getStaticPaths", function() { return unstable_getStaticPaths; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "unstable_getServerProps", function() { return unstable_getServerProps; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "config", function() { return config; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "_app", function() { return _app; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "renderReqToHTML", function() { return renderReqToHTML; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony import */ var next_plugin_loader_middleware_on_init_server___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("GX0O");
+/* harmony import */ var next_plugin_loader_middleware_on_error_server___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__("KqAr");
+
+    
+    
+    
+    const runtimeConfig = {}
+    const {parse} = __webpack_require__("bzos")
+    const {parse: parseQs} = __webpack_require__("8xkj")
+    const {renderToHTML} =__webpack_require__("/bjS");
+    const {sendHTML} = __webpack_require__("LuNM");
+    const buildManifest = __webpack_require__("LZ9C");
+    const reactLoadableManifest = __webpack_require__("67Bq");
+    const Document = __webpack_require__("VDXt").default;
+    const Error = __webpack_require__("/a9y").default;
+    const App = __webpack_require__("1TCz").default;
+    
+    
+    const { rewrites } = __webpack_require__("Skye")
+    const { pathToRegexp, default: pathMatch } = __webpack_require__("uDRR")
+  
+
+    const ComponentInfo = __webpack_require__("/a9y")
+
+    const Component = ComponentInfo.default
+    /* harmony default export */ __webpack_exports__["default"] = (Component);
+    const unstable_getStaticProps = ComponentInfo['unstable_getStaticProp' + 's']
+    const unstable_getStaticParams = ComponentInfo['unstable_getStaticParam' + 's']
+    const unstable_getStaticPaths = ComponentInfo['unstable_getStaticPath' + 's']
+    const unstable_getServerProps = ComponentInfo['unstable_getServerProp' + 's']
+
+    
+    
+    const getCustomRouteMatcher = pathMatch(true)
+
+    function handleRewrites(parsedUrl) {
+      for (const rewrite of rewrites) {
+        const matcher = getCustomRouteMatcher(rewrite.source)
+        const params = matcher(parsedUrl.pathname)
+
+        if (params) {
+          parsedUrl.query = {
+            ...parsedUrl.query,
+            ...params
+          }
+          const parsedDest = parse(rewrite.destination)
+          const destCompiler = pathToRegexp.compile(
+            `${parsedDest.pathname}${parsedDest.hash || ''}`
+          )
+          const newUrl = destCompiler(params)
+          const parsedNewUrl = parse(newUrl)
+
+          parsedUrl.pathname = parsedNewUrl.pathname
+          parsedUrl.hash = parsedNewUrl.hash
+
+          if (parsedUrl.pathname === '/_error'){
+            break
+          }
+          
+        }
+      }
+
+      return parsedUrl
+    }
+  
+
+    const config = ComponentInfo['confi' + 'g'] || {}
+    const _app = App
+    async function renderReqToHTML(req, res, fromExport, _renderOpts, _params) {
+      
+      const options = {
+        App,
+        Document,
+        buildManifest,
+        unstable_getStaticProps,
+        unstable_getServerProps,
+        unstable_getStaticPaths,
+        reactLoadableManifest,
+        canonicalBase: "",
+        buildId: "D_ly4W3kD_FbYo4fwYEJA",
+        assetPrefix: "",
+        runtimeConfig: runtimeConfig.publicRuntimeConfig || {},
+        previewProps: {previewModeId:"c1e96b567e1519297c6b586f0eea18fa",previewModeSigningKey:"23d91df09a82c039f1bd78e160b1119d9da0664cf71b554f1fb6e304a0c1a2d3",previewModeEncryptionKey:"11f6e083d0cdcb0a693a9493438db505a7935fdce9703aee706c80528a479670"},
+        ..._renderOpts
+      }
+      let _nextData = false
+
+      const parsedUrl = handleRewrites(parse(req.url, true))
+
+      if (parsedUrl.pathname.match(/_next\/data/)) {
+        _nextData = true
+        parsedUrl.pathname = parsedUrl.pathname
+          .replace(new RegExp('/_next/data/D_ly4W3kD_FbYo4fwYEJA/'), '/')
+          .replace(/\.json$/, '')
+      }
+
+      const renderOpts = Object.assign(
+        {
+          Component,
+          pageConfig: config,
+          nextExport: fromExport
+        },
+        options,
+      )
+      try {
+        res.statusCode = 404
+        const params = {};
+        const nowParams = null;
+        // make sure to set renderOpts to the correct params e.g. _params
+        // if provided from worker or params if we're parsing them here
+        renderOpts.params = _params || params
+
+        const isFallback = parsedUrl.query.__nextFallback
+
+        let result = await renderToHTML(req, res, "/_error", Object.assign({}, unstable_getStaticProps ? {} : parsedUrl.query, nowParams ? nowParams : params, _params, isFallback ? { __nextFallback: 'true' } : {}), renderOpts)
+
+        if (_nextData && !fromExport) {
+          const payload = JSON.stringify(renderOpts.pageData)
+          res.setHeader('Content-Type', 'application/json')
+          res.setHeader('Content-Length', Buffer.byteLength(payload))
+
+          res.setHeader(
+            'Cache-Control',
+            unstable_getServerProps
+              ? `no-cache, no-store, must-revalidate`
+              : `s-maxage=${renderOpts.revalidate}, stale-while-revalidate`
+          )
+          res.end(payload)
+          return null
+        }
+
+        if (fromExport) return { html: result, renderOpts }
+        return result
+      } catch (err) {
+        if (err.code === 'ENOENT') {
+          res.statusCode = 404
+          const result = await renderToHTML(req, res, "/_error", parsedUrl.query, Object.assign({}, options, {
+            unstable_getStaticProps: undefined,
+            unstable_getStaticPaths: undefined,
+            unstable_getServerProps: undefined,
+            Component: Error
+          }))
+          return result
+        } else {
+          console.error(err)
+          res.statusCode = 500
+          const result = await renderToHTML(req, res, "/_error", parsedUrl.query, Object.assign({}, options, {
+            unstable_getStaticProps: undefined,
+            unstable_getStaticPaths: undefined,
+            unstable_getServerProps: undefined,
+            Component: Error,
+            err
+          }))
+          return result
+        }
+      }
+    }
+    async function render (req, res) {
+      try {
+        await Object(next_plugin_loader_middleware_on_init_server___WEBPACK_IMPORTED_MODULE_0__["default"])()
+        const html = await renderReqToHTML(req, res)
+        if (html) {
+          sendHTML(req, res, html, {generateEtags: true})
+        }
+      } catch(err) {
+        await Object(next_plugin_loader_middleware_on_error_server___WEBPACK_IMPORTED_MODULE_1__["default"])(err)
+        console.error(err)
+        res.statusCode = 500
+        res.end('Internal Server Error')
+      }
+    }
+  
+
+/***/ }),
+
 /***/ "Fw1r":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -8132,6 +8189,60 @@ function getConstructorName (obj) {
 
 /***/ }),
 
+/***/ "JVz0":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EnvContext", function() { return EnvContext; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "useEnv", function() { return useEnv; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("q1tI");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+const EnvContext = Object(react__WEBPACK_IMPORTED_MODULE_0__["createContext"])();
+const useEnv = () => Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(EnvContext);
+
+const EnvProvider = props => {
+  const {
+    0: statusUrl,
+    1: setStatusUrl
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])("");
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
+    if (false) {} else {
+      setStatusUrl("https://word-processor.now.sh");
+    }
+  }, []);
+  return __jsx(EnvContext.Provider, {
+    value: statusUrl
+  }, props.children);
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (EnvProvider); // export class EnvProvider extends Component {
+//     state = {
+//         statusUrl: ""
+//     };
+//     componentDidMount() {
+//         if(process.env.NODE_ENV === "development") {
+//             this.setState({ statusUrl: "http://localhost:3000" })
+//         } else {
+//             this.setState({ statusUrl: "https://word-processor.now.sh" })
+//         }
+//     }
+//     render() {
+//         const { statusUrl } = this.state;
+//         return (
+//             <EnvContext.Provider
+//                 value={statusUrl}
+//             >
+//                 {this.props.children}
+//             </EnvContext.Provider>
+//         )
+//     }
+// }
+
+/***/ }),
+
 /***/ "JWdw":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -8526,7 +8637,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ "LZ9C":
 /***/ (function(module) {
 
-module.exports = JSON.parse("{\"devFiles\":[],\"pages\":{\"/\":[\"static/runtime/webpack-4b444dab214c6491079c.js\",\"static/chunks/framework.ad13eced0f07a9df2bbe.js\",\"static/chunks/commons.2c475947cb63a4a2ebda.js\",\"static/chunks/86f92792e7e44cb8097698e84d1896efce2b19ee.e4fbe5fb5edb7575c8f9.js\",\"static/runtime/main-dd5602af93e1c4bd8109.js\"],\"/_app\":[\"static/runtime/webpack-4b444dab214c6491079c.js\",\"static/chunks/framework.ad13eced0f07a9df2bbe.js\",\"static/chunks/commons.2c475947cb63a4a2ebda.js\",\"static/chunks/86f92792e7e44cb8097698e84d1896efce2b19ee.e4fbe5fb5edb7575c8f9.js\",\"static/runtime/main-dd5602af93e1c4bd8109.js\",\"static/MttgQ4nOSavJtcZg7bHPW/_buildManifest.js\"],\"/_error\":[\"static/runtime/webpack-4b444dab214c6491079c.js\",\"static/chunks/framework.ad13eced0f07a9df2bbe.js\",\"static/chunks/commons.2c475947cb63a4a2ebda.js\",\"static/runtime/main-dd5602af93e1c4bd8109.js\"],\"/_polyfills\":[\"static/runtime/polyfills-0638c93e5165546c7715.js\"],\"/comps/navbar\":[\"static/runtime/webpack-4b444dab214c6491079c.js\",\"static/chunks/framework.ad13eced0f07a9df2bbe.js\",\"static/chunks/commons.2c475947cb63a4a2ebda.js\",\"static/chunks/86f92792e7e44cb8097698e84d1896efce2b19ee.e4fbe5fb5edb7575c8f9.js\",\"static/runtime/main-dd5602af93e1c4bd8109.js\"],\"/index\":[\"static/runtime/webpack-4b444dab214c6491079c.js\",\"static/chunks/framework.ad13eced0f07a9df2bbe.js\",\"static/chunks/commons.2c475947cb63a4a2ebda.js\",\"static/chunks/86f92792e7e44cb8097698e84d1896efce2b19ee.e4fbe5fb5edb7575c8f9.js\",\"static/runtime/main-dd5602af93e1c4bd8109.js\"],\"/profile\":[\"static/runtime/webpack-4b444dab214c6491079c.js\",\"static/chunks/framework.ad13eced0f07a9df2bbe.js\",\"static/chunks/commons.2c475947cb63a4a2ebda.js\",\"static/chunks/86f92792e7e44cb8097698e84d1896efce2b19ee.e4fbe5fb5edb7575c8f9.js\",\"static/runtime/main-dd5602af93e1c4bd8109.js\"]}}");
+module.exports = JSON.parse("{\"devFiles\":[],\"pages\":{\"/\":[\"static/runtime/webpack-4b444dab214c6491079c.js\",\"static/chunks/framework.ad13eced0f07a9df2bbe.js\",\"static/chunks/commons.86e6445adfba98436081.js\",\"static/chunks/2c5e36487c262c56a7cbf7404ce670b42174429e.a9b27a1eb79cf02e7b62.js\",\"static/chunks/87d9895a52ed5f529e01aa64a205d0ea12268b4c.bfa5455983da9f4cf5ce.js\",\"static/chunks/179b81f598e602cf82dcd3da6ac016d213a29b5b.f1f4a0adbb3e1908196b.js\",\"static/runtime/main-6520275baadd1ec3d385.js\"],\"/_app\":[\"static/runtime/webpack-4b444dab214c6491079c.js\",\"static/chunks/framework.ad13eced0f07a9df2bbe.js\",\"static/chunks/commons.86e6445adfba98436081.js\",\"static/chunks/2c5e36487c262c56a7cbf7404ce670b42174429e.a9b27a1eb79cf02e7b62.js\",\"static/chunks/87d9895a52ed5f529e01aa64a205d0ea12268b4c.bfa5455983da9f4cf5ce.js\",\"static/runtime/main-6520275baadd1ec3d385.js\",\"static/D_ly4W3kD_FbYo4fwYEJA/_buildManifest.js\"],\"/_error\":[\"static/runtime/webpack-4b444dab214c6491079c.js\",\"static/chunks/framework.ad13eced0f07a9df2bbe.js\",\"static/chunks/commons.86e6445adfba98436081.js\",\"static/runtime/main-6520275baadd1ec3d385.js\"],\"/_polyfills\":[\"static/runtime/polyfills-f4f9c501a023823ba3a2.js\"],\"/comps/contexts/envContext\":[\"static/runtime/webpack-4b444dab214c6491079c.js\",\"static/chunks/framework.ad13eced0f07a9df2bbe.js\",\"static/chunks/commons.86e6445adfba98436081.js\",\"static/runtime/main-6520275baadd1ec3d385.js\"],\"/comps/navbar\":[\"static/runtime/webpack-4b444dab214c6491079c.js\",\"static/chunks/framework.ad13eced0f07a9df2bbe.js\",\"static/chunks/commons.86e6445adfba98436081.js\",\"static/chunks/2c5e36487c262c56a7cbf7404ce670b42174429e.a9b27a1eb79cf02e7b62.js\",\"static/chunks/87d9895a52ed5f529e01aa64a205d0ea12268b4c.bfa5455983da9f4cf5ce.js\",\"static/chunks/179b81f598e602cf82dcd3da6ac016d213a29b5b.f1f4a0adbb3e1908196b.js\",\"static/runtime/main-6520275baadd1ec3d385.js\"],\"/index\":[\"static/runtime/webpack-4b444dab214c6491079c.js\",\"static/chunks/framework.ad13eced0f07a9df2bbe.js\",\"static/chunks/commons.86e6445adfba98436081.js\",\"static/chunks/2c5e36487c262c56a7cbf7404ce670b42174429e.a9b27a1eb79cf02e7b62.js\",\"static/chunks/87d9895a52ed5f529e01aa64a205d0ea12268b4c.bfa5455983da9f4cf5ce.js\",\"static/chunks/179b81f598e602cf82dcd3da6ac016d213a29b5b.f1f4a0adbb3e1908196b.js\",\"static/runtime/main-6520275baadd1ec3d385.js\"],\"/profile\":[\"static/runtime/webpack-4b444dab214c6491079c.js\",\"static/chunks/framework.ad13eced0f07a9df2bbe.js\",\"static/chunks/commons.86e6445adfba98436081.js\",\"static/chunks/2c5e36487c262c56a7cbf7404ce670b42174429e.a9b27a1eb79cf02e7b62.js\",\"static/chunks/87d9895a52ed5f529e01aa64a205d0ea12268b4c.bfa5455983da9f4cf5ce.js\",\"static/chunks/179b81f598e602cf82dcd3da6ac016d213a29b5b.f1f4a0adbb3e1908196b.js\",\"static/runtime/main-6520275baadd1ec3d385.js\"]}}");
 
 /***/ }),
 
@@ -12279,194 +12390,6 @@ module.exports = function jwa(algorithm) {
   }
 };
 
-
-/***/ }),
-
-/***/ "ey3D":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "unstable_getStaticProps", function() { return unstable_getStaticProps; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "unstable_getStaticParams", function() { return unstable_getStaticParams; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "unstable_getStaticPaths", function() { return unstable_getStaticPaths; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "unstable_getServerProps", function() { return unstable_getServerProps; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "config", function() { return config; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "_app", function() { return _app; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "renderReqToHTML", function() { return renderReqToHTML; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
-/* harmony import */ var next_plugin_loader_middleware_on_init_server___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("GX0O");
-/* harmony import */ var next_plugin_loader_middleware_on_error_server___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__("KqAr");
-
-    
-    
-    
-    const runtimeConfig = {}
-    const {parse} = __webpack_require__("bzos")
-    const {parse: parseQs} = __webpack_require__("8xkj")
-    const {renderToHTML} =__webpack_require__("/bjS");
-    const {sendHTML} = __webpack_require__("LuNM");
-    const buildManifest = __webpack_require__("LZ9C");
-    const reactLoadableManifest = __webpack_require__("67Bq");
-    const Document = __webpack_require__("VDXt").default;
-    const Error = __webpack_require__("/a9y").default;
-    const App = __webpack_require__("1TCz").default;
-    
-    
-    const { rewrites } = __webpack_require__("Skye")
-    const { pathToRegexp, default: pathMatch } = __webpack_require__("uDRR")
-  
-
-    const ComponentInfo = __webpack_require__("/a9y")
-
-    const Component = ComponentInfo.default
-    /* harmony default export */ __webpack_exports__["default"] = (Component);
-    const unstable_getStaticProps = ComponentInfo['unstable_getStaticProp' + 's']
-    const unstable_getStaticParams = ComponentInfo['unstable_getStaticParam' + 's']
-    const unstable_getStaticPaths = ComponentInfo['unstable_getStaticPath' + 's']
-    const unstable_getServerProps = ComponentInfo['unstable_getServerProp' + 's']
-
-    
-    
-    const getCustomRouteMatcher = pathMatch(true)
-
-    function handleRewrites(parsedUrl) {
-      for (const rewrite of rewrites) {
-        const matcher = getCustomRouteMatcher(rewrite.source)
-        const params = matcher(parsedUrl.pathname)
-
-        if (params) {
-          parsedUrl.query = {
-            ...parsedUrl.query,
-            ...params
-          }
-          const parsedDest = parse(rewrite.destination)
-          const destCompiler = pathToRegexp.compile(
-            `${parsedDest.pathname}${parsedDest.hash || ''}`
-          )
-          const newUrl = destCompiler(params)
-          const parsedNewUrl = parse(newUrl)
-
-          parsedUrl.pathname = parsedNewUrl.pathname
-          parsedUrl.hash = parsedNewUrl.hash
-
-          if (parsedUrl.pathname === '/_error'){
-            break
-          }
-          
-        }
-      }
-
-      return parsedUrl
-    }
-  
-
-    const config = ComponentInfo['confi' + 'g'] || {}
-    const _app = App
-    async function renderReqToHTML(req, res, fromExport, _renderOpts, _params) {
-      
-      const options = {
-        App,
-        Document,
-        buildManifest,
-        unstable_getStaticProps,
-        unstable_getServerProps,
-        unstable_getStaticPaths,
-        reactLoadableManifest,
-        canonicalBase: "",
-        buildId: "MttgQ4nOSavJtcZg7bHPW",
-        assetPrefix: "",
-        runtimeConfig: runtimeConfig.publicRuntimeConfig || {},
-        previewProps: {previewModeId:"0a39cefd2df611b410c3d843d58a3b44",previewModeSigningKey:"a25e85fedac9afc1a71a8b359fe30d9576a677e7fef1bc7374d1287d1ecea6ba",previewModeEncryptionKey:"80cec0bec3c13ae6f482a88f73495c7e871972e9c48e2ce3c751f40f0ff13e93"},
-        ..._renderOpts
-      }
-      let _nextData = false
-
-      const parsedUrl = handleRewrites(parse(req.url, true))
-
-      if (parsedUrl.pathname.match(/_next\/data/)) {
-        _nextData = true
-        parsedUrl.pathname = parsedUrl.pathname
-          .replace(new RegExp('/_next/data/MttgQ4nOSavJtcZg7bHPW/'), '/')
-          .replace(/\.json$/, '')
-      }
-
-      const renderOpts = Object.assign(
-        {
-          Component,
-          pageConfig: config,
-          nextExport: fromExport
-        },
-        options,
-      )
-      try {
-        res.statusCode = 404
-        const params = {};
-        const nowParams = null;
-        // make sure to set renderOpts to the correct params e.g. _params
-        // if provided from worker or params if we're parsing them here
-        renderOpts.params = _params || params
-
-        const isFallback = parsedUrl.query.__nextFallback
-
-        let result = await renderToHTML(req, res, "/_error", Object.assign({}, unstable_getStaticProps ? {} : parsedUrl.query, nowParams ? nowParams : params, _params, isFallback ? { __nextFallback: 'true' } : {}), renderOpts)
-
-        if (_nextData && !fromExport) {
-          const payload = JSON.stringify(renderOpts.pageData)
-          res.setHeader('Content-Type', 'application/json')
-          res.setHeader('Content-Length', Buffer.byteLength(payload))
-
-          res.setHeader(
-            'Cache-Control',
-            unstable_getServerProps
-              ? `no-cache, no-store, must-revalidate`
-              : `s-maxage=${renderOpts.revalidate}, stale-while-revalidate`
-          )
-          res.end(payload)
-          return null
-        }
-
-        if (fromExport) return { html: result, renderOpts }
-        return result
-      } catch (err) {
-        if (err.code === 'ENOENT') {
-          res.statusCode = 404
-          const result = await renderToHTML(req, res, "/_error", parsedUrl.query, Object.assign({}, options, {
-            unstable_getStaticProps: undefined,
-            unstable_getStaticPaths: undefined,
-            unstable_getServerProps: undefined,
-            Component: Error
-          }))
-          return result
-        } else {
-          console.error(err)
-          res.statusCode = 500
-          const result = await renderToHTML(req, res, "/_error", parsedUrl.query, Object.assign({}, options, {
-            unstable_getStaticProps: undefined,
-            unstable_getStaticPaths: undefined,
-            unstable_getServerProps: undefined,
-            Component: Error,
-            err
-          }))
-          return result
-        }
-      }
-    }
-    async function render (req, res) {
-      try {
-        await Object(next_plugin_loader_middleware_on_init_server___WEBPACK_IMPORTED_MODULE_0__["default"])()
-        const html = await renderReqToHTML(req, res)
-        if (html) {
-          sendHTML(req, res, html, {generateEtags: true})
-        }
-      } catch(err) {
-        await Object(next_plugin_loader_middleware_on_error_server___WEBPACK_IMPORTED_MODULE_1__["default"])(err)
-        console.error(err)
-        res.statusCode = 500
-        res.end('Internal Server Error')
-      }
-    }
-  
 
 /***/ }),
 

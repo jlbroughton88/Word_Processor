@@ -27,6 +27,12 @@
     "next": "^9.2.2",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
+    "serverless-mysql": "^1.5.3",
+    "sql-template-strings": "^2.2.2",
     "use-auth0-hooks": "^0.7.0"
+  },
+  "peerDependencies": {
+    "react": ">=16.8.0",
+    "react-dom": ">=16.8.0"
   }
 }

@@ -4,12 +4,20 @@
         "env" : {
             "CLIENT_ID": "@wp_clientid",
             "DOMAIN":  "@wp_domain",
-            "REDIRECT_URI": "http://localhost:3000/"
+            "REDIRECT_URI": "http://localhost:3000/",
+            "WP_HOST": "@wp_host",
+            "WP_USERNAME": "@wp_username",
+            "WP_PASSWORD": "@wp_password",
+            "WP_DATABASE": "@wp_database"
         }
     },
     "env": {
         "CLIENT_ID": "@wp_clientid",
         "DOMAIN":  "@wp_domain",
-        "REDIRECT_URI": "http://localhost:3000/"
+        "REDIRECT_URI": "http://localhost:3000/",
+        "WP_HOST": "@wp_host",
+        "WP_USERNAME": "@wp_username",
+        "WP_PASSWORD": "@wp_password",
+        "WP_DATABASE": "@wp_database"
     }
 }

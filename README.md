@@ -2,14 +2,18 @@
 Created by Jacob Broughton
 
 
+<!-- Urgent -->
+
+
+
 <!-- Steps (In order) -->
 * Configure Next.JS 
 
-Design on Affinity Designer
+* Design on Affinity Designer
 
-Make environment variable context
+* Make environment variable context
 
-Set up Auth0
+* Set up Auth0
 
 Set up SQL tables
     - Users
