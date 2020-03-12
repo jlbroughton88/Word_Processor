@@ -1,0 +1,33 @@
+.profileMother{
+    background: #f8f8f8;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    .profileHeader{
+        align-self: center;
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 125px;
+        position: relative;
+        background: #ffffff;
+        .welcomeDiv{
+            position: absolute;
+            left: 0;
+            padding-left: 4em;
+            .welcome{
+                margin: 0;
+            }
+        }
+        .newPostCTADiv{
+            position: absolute;
+            right: 0;
+            padding-right: 4em;
+            .newPostCTA{
+                background: #EB0015;
+                padding: 10px 25px;
+                color: #ffffff;
+            }
+        }
+    }
+}

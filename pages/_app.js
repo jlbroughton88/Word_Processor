@@ -1,4 +1,5 @@
 import React from "react";
+import Global from "./comps/global";
 // import App from "next/app";
 import EnvProvider from "./comps/contexts/envContext";
 // import Router from "next/router";
@@ -15,7 +16,10 @@ const App = props => {
       redirectUri={process.env.REDIRECT_URI}
     >
         <EnvProvider>
-        <Component {...pageProps} />
+          <Global>
+            <Component {...pageProps} />
+          </Global>
+
         </EnvProvider>
     </Auth0Provider>
   );

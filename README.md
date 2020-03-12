@@ -15,10 +15,8 @@ Created by Jacob Broughton
 
 * Set up Auth0
 
-Set up SQL tables
-    - Users
+* Set up SQL tables
     - Posts
-    - Comments
 
 Make main text editor area
     - Bold
