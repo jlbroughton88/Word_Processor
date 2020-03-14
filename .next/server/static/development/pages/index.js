@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -1901,9 +1901,7 @@ const Navbar = () => {
     user
   } = Object(use_auth0_hooks__WEBPACK_IMPORTED_MODULE_5__["useAuth"])();
   const statusUrl = Object(_contexts_envContext__WEBPACK_IMPORTED_MODULE_3__["useEnv"])();
-  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
-    console.log("statusUrl");
-  }, [statusUrl]);
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {}, [statusUrl]);
   return __jsx("header", {
     __source: {
       fileName: _jsxFileName,
@@ -2058,7 +2056,7 @@ const Index = () => {
 
 /***/ }),
 
-/***/ 3:
+/***/ 4:
 /*!******************************!*\
   !*** multi ./pages/index.js ***!
   \******************************/

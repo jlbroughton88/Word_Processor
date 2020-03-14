@@ -11401,9 +11401,7 @@ var Navbar = function Navbar() {
       user = _useAuth.user;
 
   var statusUrl = Object(_contexts_envContext__WEBPACK_IMPORTED_MODULE_3__["useEnv"])();
-  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
-    console.log("statusUrl");
-  }, [statusUrl]);
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {}, [statusUrl]);
   return __jsx("header", {
     __source: {
       fileName: _jsxFileName,
@@ -11547,7 +11545,7 @@ var Index = function Index() {
 
 /***/ }),
 
-/***/ 1:
+/***/ 2:
 /*!**************************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2FJacobBroughton%2Fcoding%2Fprojects%2FWord_Processor%2Fpages%2Findex.js ***!
   \**************************************************************************************************************************************************/
@@ -11570,5 +11568,5 @@ module.exports = dll_82519ec661270f7f484f;
 
 /***/ })
 
-},[[1,"static/runtime/webpack.js","styles"]]]);
+},[[2,"static/runtime/webpack.js","styles"]]]);
 //# sourceMappingURL=index.js.map

@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 5);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -1901,9 +1901,7 @@ const Navbar = () => {
     user
   } = Object(use_auth0_hooks__WEBPACK_IMPORTED_MODULE_5__["useAuth"])();
   const statusUrl = Object(_contexts_envContext__WEBPACK_IMPORTED_MODULE_3__["useEnv"])();
-  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
-    console.log("statusUrl");
-  }, [statusUrl]);
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {}, [statusUrl]);
   return __jsx("header", {
     __source: {
       fileName: _jsxFileName,
@@ -2006,54 +2004,137 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _public_static_css_post_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../public/static/css/post.scss */ "./public/static/css/post.scss");
 /* harmony import */ var _public_static_css_post_scss__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_public_static_css_post_scss__WEBPACK_IMPORTED_MODULE_2__);
 var _jsxFileName = "/Users/JacobBroughton/coding/projects/Word_Processor/pages/post.js";
-
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
+
 const Post = () => {
+  const {
+    0: docName,
+    1: setDocName
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])("Untitled Document");
+  const {
+    0: selectedObj,
+    1: setSelectedObj
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({
+    start: 0,
+    end: 0,
+    content: ""
+  });
+
+  const handleDocNameChange = e => {
+    setDocName(e.target.value);
+  };
+
+  const highlightDocName = e => {
+    e.target.select();
+  }; // Set "anchors" around selected text
+  // Count number of instances before last index of selection, use the last one
+
+
+  const getSelection = e => {
+    let text = e.target.value;
+    let selectedText = window.getSelection().toString();
+
+    if (text !== "" && selectedText !== "") {
+      let selection = window.getSelection();
+      let selStart = e.target.selectionStart;
+      let selEnd = e.target.selectionEnd;
+      let regexText = new RegExp(selectedText, "g");
+      let regMatch = text.match(regexText);
+      console.log(selStart);
+      console.log(selEnd);
+      console.log(selection);
+      console.log(regMatch);
+      setSelectedObj({
+        start: selStart,
+        end: selEnd,
+        content: selectedText
+      });
+    }
+  };
+
   return __jsx("div", {
     className: "postMother",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 6
+      lineNumber: 50
     },
     __self: undefined
   }, __jsx(_comps_navbar__WEBPACK_IMPORTED_MODULE_1__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 7
+      lineNumber: 51
     },
     __self: undefined
   }), __jsx("div", {
     className: "postMain",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 8
+      lineNumber: 52
     },
     __self: undefined
   }, __jsx("div", {
     className: "editOptionsParent",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 9
+      lineNumber: 53
     },
     __self: undefined
-  }), __jsx("div", {
+  }, __jsx("div", {
+    className: "docNameInputDiv",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 54
+    },
+    __self: undefined
+  }, __jsx("input", {
+    onClick: e => highlightDocName(e),
+    value: docName,
+    onChange: e => handleDocNameChange(e),
+    className: "docNameInput",
+    placeholder: "Untitled Document",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 55
+    },
+    __self: undefined
+  }))), __jsx("div", {
     className: "postInputParent",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 12
+      lineNumber: 64
     },
     __self: undefined
   }, __jsx("textarea", {
+    onMouseUp: e => getSelection(e),
     placeholder: "Begin typing here...",
+    minLength: "10",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 13
+      lineNumber: 65
     },
     __self: undefined
-  }))));
+  }))), __jsx("h3", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 72
+    },
+    __self: undefined
+  }, "Start: ", selectedObj.start), __jsx("h3", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 73
+    },
+    __self: undefined
+  }, "End: ", selectedObj.end), __jsx("h5", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 74
+    },
+    __self: undefined
+  }, "Text: ", selectedObj.content));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Post);
@@ -2082,7 +2163,7 @@ const Post = () => {
 
 /***/ }),
 
-/***/ 4:
+/***/ 5:
 /*!*****************************!*\
   !*** multi ./pages/post.js ***!
   \*****************************/

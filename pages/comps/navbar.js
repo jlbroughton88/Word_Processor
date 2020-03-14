@@ -11,7 +11,7 @@ const Navbar = () => {
   const statusUrl = useEnv();
 
   useEffect(() => {
-    console.log("statusUrl");
+   
   }, [statusUrl]);
 
   return (

@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "GQwm");
+/******/ 	return __webpack_require__(__webpack_require__.s = "I2jn");
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -6957,90 +6957,6 @@ module.exports = VerifyStream;
 
 /***/ }),
 
-/***/ "GQwm":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var next_plugin_loader_middleware_on_init_server___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("GX0O");
-/* harmony import */ var next_plugin_loader_middleware_on_error_server___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__("KqAr");
-
-      
-      
-      
-      const runtimeConfig = {}
-      
-      const { parse } = __webpack_require__("bzos")
-      const { apiResolver } = __webpack_require__("PCLx")
-      
-    const { rewrites } = __webpack_require__("Skye")
-    const { pathToRegexp, default: pathMatch } = __webpack_require__("uDRR")
-  
-
-      
-      
-    const getCustomRouteMatcher = pathMatch(true)
-
-    function handleRewrites(parsedUrl) {
-      for (const rewrite of rewrites) {
-        const matcher = getCustomRouteMatcher(rewrite.source)
-        const params = matcher(parsedUrl.pathname)
-
-        if (params) {
-          parsedUrl.query = {
-            ...parsedUrl.query,
-            ...params
-          }
-          const parsedDest = parse(rewrite.destination)
-          const destCompiler = pathToRegexp.compile(
-            `${parsedDest.pathname}${parsedDest.hash || ''}`
-          )
-          const newUrl = destCompiler(params)
-          const parsedNewUrl = parse(newUrl)
-
-          parsedUrl.pathname = parsedNewUrl.pathname
-          parsedUrl.hash = parsedNewUrl.hash
-
-          if (parsedUrl.pathname === '/api/docu/post'){
-            break
-          }
-          
-        }
-      }
-
-      return parsedUrl
-    }
-  
-
-      /* harmony default export */ __webpack_exports__["default"] = (async (req, res) => {
-        try {
-          await Object(next_plugin_loader_middleware_on_init_server___WEBPACK_IMPORTED_MODULE_0__["default"])()
-
-          
-          const parsedUrl = parse(req.url, true)
-
-          const params = {}
-
-          const resolver = __webpack_require__("Mtsi")
-          apiResolver(
-            req,
-            res,
-            Object.assign({}, parsedUrl.query, params ),
-            resolver,
-            {previewModeId:"e9f7fc47b4338e132f82abb10c8129ff",previewModeSigningKey:"5317e086d2e4b4ee5c44ffca12611d8f647200f247736965bc165e17d8c1cc4e",previewModeEncryptionKey:"f5fce32f0838b542bdf949649f320cad7c0b71c1e3a7c9024ece8ec2a282db47"},
-            next_plugin_loader_middleware_on_error_server___WEBPACK_IMPORTED_MODULE_1__["default"]
-          )
-        } catch (err) {
-          console.error(err)
-          await Object(next_plugin_loader_middleware_on_error_server___WEBPACK_IMPORTED_MODULE_1__["default"])(err)
-          res.statusCode = 500
-          res.end('Internal Server Error')
-        }
-      });
-    
-
-/***/ }),
-
 /***/ "GX0O":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -7445,6 +7361,90 @@ function getConstructorName (obj) {
   return (receiver.constructor && receiver.constructor.name) || null
 }
 
+
+/***/ }),
+
+/***/ "I2jn":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var next_plugin_loader_middleware_on_init_server___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("GX0O");
+/* harmony import */ var next_plugin_loader_middleware_on_error_server___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__("KqAr");
+
+      
+      
+      
+      const runtimeConfig = {}
+      
+      const { parse } = __webpack_require__("bzos")
+      const { apiResolver } = __webpack_require__("PCLx")
+      
+    const { rewrites } = __webpack_require__("Skye")
+    const { pathToRegexp, default: pathMatch } = __webpack_require__("uDRR")
+  
+
+      
+      
+    const getCustomRouteMatcher = pathMatch(true)
+
+    function handleRewrites(parsedUrl) {
+      for (const rewrite of rewrites) {
+        const matcher = getCustomRouteMatcher(rewrite.source)
+        const params = matcher(parsedUrl.pathname)
+
+        if (params) {
+          parsedUrl.query = {
+            ...parsedUrl.query,
+            ...params
+          }
+          const parsedDest = parse(rewrite.destination)
+          const destCompiler = pathToRegexp.compile(
+            `${parsedDest.pathname}${parsedDest.hash || ''}`
+          )
+          const newUrl = destCompiler(params)
+          const parsedNewUrl = parse(newUrl)
+
+          parsedUrl.pathname = parsedNewUrl.pathname
+          parsedUrl.hash = parsedNewUrl.hash
+
+          if (parsedUrl.pathname === '/api/docu/post'){
+            break
+          }
+          
+        }
+      }
+
+      return parsedUrl
+    }
+  
+
+      /* harmony default export */ __webpack_exports__["default"] = (async (req, res) => {
+        try {
+          await Object(next_plugin_loader_middleware_on_init_server___WEBPACK_IMPORTED_MODULE_0__["default"])()
+
+          
+          const parsedUrl = parse(req.url, true)
+
+          const params = {}
+
+          const resolver = __webpack_require__("Mtsi")
+          apiResolver(
+            req,
+            res,
+            Object.assign({}, parsedUrl.query, params ),
+            resolver,
+            {previewModeId:"f2007b36028b86df97ab93a40cfb1a24",previewModeSigningKey:"bb147469022b78065a5269d0e00577d1edb10ee33c69f7277525e6e0cba92be4",previewModeEncryptionKey:"87148558da5269cc39a9257c02818cafc54d4b2d488ac311f347b9fe2165cf3c"},
+            next_plugin_loader_middleware_on_error_server___WEBPACK_IMPORTED_MODULE_1__["default"]
+          )
+        } catch (err) {
+          console.error(err)
+          await Object(next_plugin_loader_middleware_on_error_server___WEBPACK_IMPORTED_MODULE_1__["default"])(err)
+          res.statusCode = 500
+          res.end('Internal Server Error')
+        }
+      });
+    
 
 /***/ }),
 
